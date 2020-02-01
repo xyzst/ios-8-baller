@@ -9,10 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let EIGHT_BALL_ANSWERS = [#imageLiteral(resourceName: "ball1.png"),#imageLiteral(resourceName: "ball2.png"),#imageLiteral(resourceName: "ball3.png"),#imageLiteral(resourceName: "ball4.png"),#imageLiteral(resourceName: "ball5.png")]
     
-    let answers = [#imageLiteral(resourceName: "ball1.png"),#imageLiteral(resourceName: "ball2.png"),#imageLiteral(resourceName: "ball3.png"),#imageLiteral(resourceName: "ball4.png"),#imageLiteral(resourceName: "ball5.png")]
-
-
-
+    @IBOutlet weak var eightBaller: UIImageView!
+    
+    @IBAction func generateAnswerStatusPostPress(_ sender: Any) {
+        eightBaller.image = EIGHT_BALL_ANSWERS.randomElement()
+    }
 }
 
